@@ -1,4 +1,7 @@
+
+import React from 'react'
 import React, { useState, useEffect } from 'react'
+
 
 
 const url = "http://localhost:4000/movies"
@@ -34,7 +37,7 @@ function Home() {
         <>
             <div className="main-container">
                 <h1>HOME</h1>
-                <p>data</p>
+
             </div>
         </>
     )
