@@ -22,35 +22,36 @@ function App() {
 
   return (
     <>
-      <Header />
+      <div>
+        <Header />
 
-      <Switch>
+        <Switch>
 
-        <Route exact path="/">
-          <Home />
-          <div className= "game-container">    
-        <Figure />
+          <Route exact path="/">
+            <Home />
+            <div className="game-container">
+              <Figure />
+            </div>
+          </Route>
+
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/contact">
+            <Contact />
+          </Route>
+
+          <Route path="/instruction">
+            <Instruction />
+          </Route>
+          <Route path="*">
+            <h1>404 </h1>
+          </Route>
+        </Switch>
       </div>
-        </Route>
-
-        <Route path="/about">
-          <About />
-        </Route>
-
-        <Route path="/contact">
-          <Contact />
-        </Route>
-
-        <Route path="/instruction">
-          <Instruction />
-        </Route>
-        <Route path="*">
-          <h1>404 </h1>
-        </Route>
-      </Switch>
-    </div>
+    </>
   );
 }
- </>
 
 export default App;
