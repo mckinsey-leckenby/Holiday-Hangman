@@ -1,0 +1,64 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "Rudolph the Red Nosed Reindeer",
+        "quote": "A toy is never truly happy until it is loved by a child.",
+        "character": "Rudolph"
+      },
+      {
+        "id": 2,
+        "title": "Elf",
+        "quote": "First off, you see gum on the street, leave it there. It isn't free candy.",
+        "character": "Buddy"
+      },
+      {
+        "id": 3,
+        "title": "Frosty The Snowman",
+        "quote": "I'll be back again someday!",
+        "character": "Frosty"
+      },
+      {
+        "id": 4,
+        "title": "The Grinch",
+        "quote": "Am I just eating because I'm bored?",
+        "character": "Cindy Lou Who"
+      },
+      {
+        "id": 5,
+        "title": "Home Alone",
+        "quote": "Merry Christmas ya filthy animal!",
+        "character": "Kevin"
+      },
+      {
+        "id": 6,
+        "title": "A Christmas Story",
+        "quote": "No, you'll shoot your eye out.",
+        "character": "Ralphie"
+      },
+      {
+        "id": 7,
+        "title": "A Charlie Brown Christmas",
+        "quote": "Isn't there anyone who knows what Christmas is all about?",
+        "character": "Charlie Brown"
+      },
+      {
+        "id": 8,
+        "title": "Nightmare Before Christmas",
+        "quote": "And on a dark cold night, under full moonlight, he flies into the fog like a vulture in the sky!",
+        "character": "Jack Skellington"
+      },
+      {
+        "id": 9,
+        "title": "Polar Express",
+        "quote": "I Believe.",
+        "character": "Hero Boy"
+      },
+      {
+        "id": 10,
+        "title": "A Christmas Carol",
+        "quote": "Bah Humbug",
+        "character": "Ebenezer Scrooge"
+      }
+    ]
+  }
