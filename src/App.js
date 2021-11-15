@@ -5,11 +5,15 @@ import Figure from './component/Figure';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
+
       <Home />
-      <Figure />
-    </div>
+
+      <div className= "game-container">    
+        <Figure />
+      </div>
+    </>
   );
 }
 

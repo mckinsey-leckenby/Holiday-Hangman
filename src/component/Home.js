@@ -1,5 +1,5 @@
 import React from 'react'
-import Figure from './Figure'
+
 
 function Home() {
 
@@ -9,7 +9,6 @@ function Home() {
         <>
             <div className="main-container">
                 <h1>HOME</h1>
-                <Figure />
             </div>
         </>
     )
