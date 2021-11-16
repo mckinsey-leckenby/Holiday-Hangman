@@ -124,13 +124,13 @@ h1 {
 
 
 .header {
-  background-color: #f4e8c1 ;
+  /* background-color: #f4e8c1 ; */
   min-height: 40vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
-  color: pink;
+  
 }
 
