@@ -33,10 +33,15 @@ function Home() {
             })
     }, [])
 
-    let randomizedWords1 = levelOne[Math.floor(Math.random() * levelOne.length)]
-    let randomizedWords2 = levelTwo[Math.floor(Math.random() * levelTwo.length)]
-    let randomizedWords3 = levelThree[Math.floor(Math.random() * levelThree.length)]
-    console.log(randomizedWords1)
+    // let randomizedWords1 = levelOne[Math.floor(Math.random() * levelOne.length)]
+    // let randomizedWords2 = levelTwo[Math.floor(Math.random() * levelTwo.length)]
+    // let randomizedWords3 = levelThree[Math.floor(Math.random() * levelThree.length)]
+    // console.log(randomizedWords1)
+
+    // let selectedWord1 = randomizedWords1
+    // let selectedWord2 = randomizedWords2
+    // let selectedWord3 = randomizedWords3
+    
     // console.log(randomizedWords2)
 
     // console.log(levelOne)
@@ -76,6 +81,7 @@ function Home() {
                 <h1>HOME</h1>
                 <div className="game-container">
                     <Figure />
+                    
                 </div>
 
             </div>
