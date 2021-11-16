@@ -4,13 +4,16 @@ import { Link } from "react-router-dom"
 function NavBar() {
     return (
         <>
-            <Link to='/about' activeStyle>
+            <Link to='/'>
+                Home
+            </Link>
+            <Link to='/about'>
                 About
             </Link>
-            <Link to='/contact' activeStyle>
+            <Link to='/contact'>
                 Contact
             </Link>
-            <Link to='/instruction' activeStyle>
+            <Link to='/instruction'>
                 Instruction
             </Link>
 
