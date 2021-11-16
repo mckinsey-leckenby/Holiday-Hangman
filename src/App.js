@@ -29,9 +29,7 @@ function App() {
 
           <Route exact path="/">
             <Home />
-            <div className="game-container">
-              <Figure />
-            </div>
+            
           </Route>
 
           <Route path="/about">
