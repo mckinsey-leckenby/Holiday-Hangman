@@ -5,25 +5,34 @@ import {SiAboutdotme} from "react-icons/si"
 import {IoIosContact} from "react-icons/io"
 import {BiDirections} from "react-icons/bi"
 
+
 function NavBar() {
    
     return (
         <>
             <Link to='/'>
-                <AiFillHome/>
+                <AiFillHome size='100' color='red' />
             </Link>
             <Link to='/about'>
-              <SiAboutdotme/>
+              <SiAboutdotme size='100' color='red' />
             </Link>
             <Link to='/contact'>
-                <IoIosContact/>
+                <IoIosContact size='100' color='red' />
             </Link>
             <Link to='/instruction'>
-                <BiDirections/>
+                <BiDirections size='100' color='red' />
             </Link>
 
         </>
     )
 }
+
+
+// const Nav = styled.div`
+//     display: flex;
+//     justify-content: space-between
+//     align-items: center;
+//     flex-wrap: wrap;
+// `
 
 export default NavBar

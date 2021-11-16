@@ -78,7 +78,6 @@ function Home() {
     return (
         <>
             <div className="main-container">
-                <h1>HOME</h1>
                 <div className="game-container">
                     <Figure />
                     
