@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
 import Figure from './Figure'
+import Guess from './Guess'
 
 
 const url = "http://localhost:4000/movies"
