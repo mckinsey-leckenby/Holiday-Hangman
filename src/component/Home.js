@@ -2,6 +2,8 @@ import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
 import Figure from './Figure'
 import Guess from './Guess'
+//import AddGameForm from './AddGameForm'
+
 
 
 const url = "http://localhost:4000/movies"
@@ -15,6 +17,7 @@ function Home() {
     const [start, setStart] = useState(false)
 
 
+
     useEffect(() => {
         fetch(url)
             .then(r => r.json())
@@ -24,6 +27,14 @@ function Home() {
                 setLevelThree(data.map(data => data.quote))
             })
     }, [])
+
+    const addGame = (newGame) => {
+        //console.log(newTransaction)
+        setLevelOne([...levelOne, newGame])
+        setLevelTwo([...levelTwo, newGame])
+        setLevelThree([...levelThree, newGame])
+      }
+    
 
 
     const handleSelectLevel = (e) => {
