@@ -133,4 +133,23 @@ h1 {
   font-size: calc(10px + 2vmin);
   
 }
+.add-game-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgba(181, 250, 181, 0.5);
+}
+
+.add-game-form form {
+  display: flex;
+  justify-content: center;
+}
+
+.add-game-form input {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.add-game-form button {
+  width: 150px;
+}
 
