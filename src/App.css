@@ -31,7 +31,12 @@ div.selectLevel {
 }
 h1 {
   margin: 20px 0 0;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  top: 100px;
+} 
 .main-container {
   align-items: center;
 }
