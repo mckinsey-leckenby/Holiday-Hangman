@@ -169,27 +169,33 @@ height: auto;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
-
+  opacity: .7;
   
 }
 .add-game-form {
-  padding: 2rem 1rem;
-  margin: 2rem 0;
+  padding: 3rem; 
+  margin: 4rem 0;
   background-color: rgba(181, 250, 181, 0.5);
 }
 
 .add-game-form form {
   display: flex;
   justify-content: center;
+  
 }
 
 .add-game-form input {
   margin-right: 2rem;
-  flex: 1;
+  flex: 3;
+  height: 70px;
+  width: 270px;
+  opacity: .7;
+  text-align: center;
+  padding: 20px;
 }
 
 .add-game-form button {
-  width: 150px;
+  width: 170px;
   opacity: .7
   ;
 

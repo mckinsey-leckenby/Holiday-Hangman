@@ -3,11 +3,11 @@ import NavBar from './NavBar'
 // import styled from 'styled-components'
 
 
-function Header() {
+function Header({ }) {
     return (
         <div>
             <div className="header">
-                <NavBar />
+                <NavBar  />
             </div>
         </div>
     )

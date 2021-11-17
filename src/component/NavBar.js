@@ -6,10 +6,12 @@ import {IoIosContact} from "react-icons/io"
 import {BiDirections} from "react-icons/bi"
 
 
+
 function NavBar() {
    
     return (
         <>
+       
             <Link to='/'>
                 <AiFillHome size='100' color='red' />
             </Link>

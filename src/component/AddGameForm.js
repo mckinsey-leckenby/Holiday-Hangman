@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components'
 
 
-function AddGameForm({ addGame }) {
+function AddGameForm() {
 
+    const[movies, setMovies] = useState ([])
+    // console.log(movies)
     const[formData, setFormData]= useState ({
     
               title: "",
@@ -12,6 +15,16 @@ function AddGameForm({ addGame }) {
               id: ""
             
     })
+    const addGame = (newGame) => {
+        //console.log(newTransaction)
+       setMovies([...movies, newGame]) 
+       console.log(movies)  
+      }
+    useEffect(() => {
+        fetch('http://localhost:4000/movies')
+        .then(resp => resp.json())
+        .then(data => setMovies(data))
+    }, [])
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,7 +36,7 @@ const handleSubmit = (e) => {
     }
 
 
-fetch('http://localhost:3000', {
+fetch('http://localhost:4000/movies', {
     method: "POST",
     headers: {"Content-type": "application/json"},
     body: JSON.stringify(newGame)
@@ -31,7 +44,7 @@ fetch('http://localhost:3000', {
   .then(resp => resp.json())
   .then(data => addGame(data))
 
-}
+  }
 
 const handleOnChange = (e) => {
 console.log(formData)
@@ -41,7 +54,7 @@ console.log(formData)
     return (
      
 
-<div className="add-game-form">
+<GameFormContainer className="add-game-form" >
 <h2>Enter New Game Here!</h2>
 <form onSubmit = {handleSubmit}>
   <input onChange={handleOnChange} type="text" name="title" placeholder="Movie Title" value={formData.title} />
@@ -49,8 +62,18 @@ console.log(formData)
   <input onChange={handleOnChange} type="text" name="quote"  placeholder="Quote" value={formData.quote}/>
   <button type="submit">Add Movie</button>
 </form>
-</div>
+</GameFormContainer>
     )
 }
+const GameFormContainer = styled.div`
+        font-size: 25px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        top: 200px;
+        color: white;
+        font-family: 'Mountains of Christmas', cursive;
+        
+        text-shadow: 2px 2px #FF0000;`
 
 export default AddGameForm
