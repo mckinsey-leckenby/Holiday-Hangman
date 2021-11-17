@@ -21,7 +21,7 @@ const ContactContainer = styled.div`
         color: white;
         font-family: 'Mountains of Christmas', cursive;
         padding-top: 4em;
-        
+        text-shadow: 2px 2px #ff0000;
 
 `
 
