@@ -6,32 +6,17 @@ import Instruction from "./component/Instruction"
 import { Route, Switch } from 'react-router-dom';
 // import { useEffect, useState } from 'react';
 import './App.css';
-import Figure from './component/Figure';
 
 function App() {
-  // const [levelOne, setLevelOne] = useState([])
-  // const [levelTwo, setLevelTwo] = useState([])
-  // const [levelThree, setLevelThree] = useState([])
-
-  // useEffect(() => {
-  //   fetch()
-  // })
-
-
-
 
   return (
     <>
       <div>
-        <Header />
-
+        <Header/>
         <Switch>
 
           <Route exact path="/">
             <Home />
-            <div className="game-container">
-              <Figure />
-            </div>
           </Route>
 
           <Route path="/about">

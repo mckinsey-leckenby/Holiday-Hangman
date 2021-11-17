@@ -2,7 +2,9 @@ import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
 import Figure from './Figure'
 import Guess from './Guess'
+
 //import AddGameForm from './AddGameForm'
+
 
 
 const url = "http://localhost:4000/movies"
@@ -14,8 +16,8 @@ function Home() {
     const [levelThree, setLevelThree] = useState([])
     const [randomedWord, setRandomedWord] = useState('')
     const [start, setStart] = useState(false)
-    //const [play, setPlay] = useState()
 
+console.log(levelOne)
 
     useEffect(() => {
         fetch(url)
@@ -27,12 +29,6 @@ function Home() {
             })
     }, [])
 
-    const addGame = (newGame) => {
-        //console.log(newTransaction)
-        setLevelOne([...levelOne, newGame])
-        setLevelTwo([...levelTwo, newGame])
-        setLevelThree([...levelThree, newGame])
-      }
     
 
 
@@ -59,6 +55,7 @@ function Home() {
 
     return (
         <>
+        
             <div className="main-container">
                 <div className="selectLevel">
                     <Button
@@ -81,7 +78,6 @@ function Home() {
                     <Figure />
                     <Guess word={randomedWord.toUpperCase()} start={start} />
                 </div>
-               
             </div>
         </>
     )
