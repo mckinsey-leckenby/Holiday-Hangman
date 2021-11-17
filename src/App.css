@@ -2,7 +2,6 @@ html {
   background: url(./background.jpg) no-repeat fixed;
    background-size: cover;
   height: 100%;
-  overflow: hidden;
   top: 0;
   left: 0;
 }
@@ -117,6 +116,20 @@ h1 {
   text-align: center;
 }
 
+button.letter:hover{background-color:orange;}
+
+.letter:active{
+  opacity: 0;
+}
+button.letter:focus {
+  display: hidden;
+  /* background-color: black;
+  opacity: 0; */
+}
+button.letter:target {
+  opacity: 0;
+}
+
 .popup button {
   cursor: pointer;
   background-color: #fff;
@@ -166,6 +179,5 @@ height: auto;
   opacity: .7
   ;
 }
-
 
 

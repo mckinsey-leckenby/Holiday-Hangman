@@ -13,7 +13,7 @@ function Instruction() {
 
 const InsContainer = styled.div`
     display: flex;
-        justify-content: space-between
+        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         top: 100px

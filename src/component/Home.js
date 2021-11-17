@@ -1,11 +1,8 @@
 import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
-import Figure from './Figure'
 import Guess from './Guess'
 
-
 const url = "http://localhost:4000/movies"
-
 
 function Home() {
     const [levelOne, setLevelOne] = useState([])
@@ -13,7 +10,6 @@ function Home() {
     const [levelThree, setLevelThree] = useState([])
     const [randomedWord, setRandomedWord] = useState('')
     const [start, setStart] = useState(false)
-
 
     useEffect(() => {
         fetch(url)
@@ -24,7 +20,6 @@ function Home() {
                 setLevelThree(data.map(data => data.quote))
             })
     }, [])
-
 
     const handleSelectLevel = (e) => {
         let random
@@ -46,30 +41,30 @@ function Home() {
         setStart(prev => !prev)
     }
 
-
     return (
         <>
             <div className="main-container">
-                <div className="selectLevel">
-                    <Button
-                        value="levelOne"
-                        onClick={handleSelectLevel}
-                    >Level One</Button>
+                {!start &&
+                    <div className="selectLevel">
+                        <Button
+                            value="levelOne"
+                            onClick={handleSelectLevel}
+                        >Level One</Button>
 
-                    <Button
-                        value="levelTwo"
-                        onClick={handleSelectLevel}
-                    >Level Two</Button>
+                        <Button
+                            value="levelTwo"
+                            onClick={handleSelectLevel}
+                        >Level Two</Button>
 
-                    <Button
-                        value="levelThree"
-                        onClick={handleSelectLevel}
-                    >Level Three</Button>
-                </div>
+                        <Button
+                            value="levelThree"
+                            onClick={handleSelectLevel}
+                        >Level Three</Button>
+                    </div>
+                }
 
                 <div className="game-container">
-                    <Figure />
-                    <Guess word={randomedWord.toUpperCase()} start={start} />
+                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
                 </div>
             </div>
         </>
