@@ -1,27 +1,16 @@
-
+import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
 import Figure from './Figure'
 
 
 const url = "http://localhost:4000/movies"
 
-// const words1 = [movies.character]
-// const words2 = [movies.title]
-// const words3 = [movies.quote]
-// let selectedWord1 = words1[Math.floor(Math.random() * words1.length)];
-// let selectedWord2 = words2[Math.floor(Math.random() * words2.length)];
-// let selectedWord3 = words3[Math.floor(Math.random() * words3.length)];
-
-
 
 function Home() {
-    const [data, setData] = useState([])
     const [levelOne, setLevelOne] = useState([])
     const [levelTwo, setLevelTwo] = useState([])
     const [levelThree, setLevelThree] = useState([])
-    const [playable, setPlayable] = useState(true);
-    const [correctLetters, setCorrectLetters] = useState([]);
-    const [wrongLetters, setWrongLetters] = useState([]);
+
 
     useEffect(() => {
         fetch(url)
@@ -33,56 +22,52 @@ function Home() {
             })
     }, [])
 
-    // let randomizedWords1 = levelOne[Math.floor(Math.random() * levelOne.length)]
-    // let randomizedWords2 = levelTwo[Math.floor(Math.random() * levelTwo.length)]
-    // let randomizedWords3 = levelThree[Math.floor(Math.random() * levelThree.length)]
-    // console.log(randomizedWords1)
 
-    // let selectedWord1 = randomizedWords1
-    // let selectedWord2 = randomizedWords2
-    // let selectedWord3 = randomizedWords3
-    
-    // console.log(randomizedWords2)
-
-    // console.log(levelOne)
-    // console.log(levelTwo)
-    // console.log(levelThree)
-
-    // useEffect(() => {
-    //     const handleKeydown = event => {
-    //       const { key, keyCode } = event;
-    //       if (playable && keyCode >= 65 && keyCode <= 90) {
-    //         const letter = key.toLowerCase();
-    //         if (randomizedWords1.includes(letter)) {
-    //           if (!correctLetters.includes(letter)) {
-    //             setCorrectLetters(currentLetters => [...currentLetters, letter]);
-    //         //   } else {
-    //         //     show(setShowNotification);
-    //           }
-    //         } else {
-    //           if (!wrongLetters.includes(letter)) {
-    //             setWrongLetters(currentLetters => [...currentLetters, letter]);
-    //           } else {
-    //             show(setShowNotification);
-    //           }
-    //         }
-    //       }
-    //     }
-    //     window.addEventListener('keydown', handleKeydown);
-    
-    //     return () => window.removeEventListener('keydown', handleKeydown);
-    //   }, [correctLetters, wrongLetters, playable]);
-
+    const handleSelectLevel = (e) => {
+        let random
+        if (e.target.value === "levelOne") {
+            random = levelOne[Math.floor(Math.random() * levelOne.length)]
+            setRandomedWord(random)
+            console.log(randomedWord)
+        }
+        if (e.target.value === "levelTwo") {
+            random = levelTwo[Math.floor(Math.random() * levelTwo.length)]
+            setRandomedWord(random)
+            console.log(randomedWord)
+        }
+        if (e.target.value === "levelThree") {
+            random = levelThree[Math.floor(Math.random() * levelThree.length)]
+            setRandomedWord(random)
+            console.log(randomedWord)
+        }
+        setStart(prev => !prev)
+    }
 
 
     return (
         <>
             <div className="main-container">
-                <div className="game-container">
-                    <Figure />
-                    
+                <div className="selectLevel">
+                    <Button
+                        value="levelOne"
+                        onClick={handleSelectLevel}
+                    >Level One</Button>
+
+                    <Button
+                        value="levelTwo"
+                        onClick={handleSelectLevel}
+                    >Level Two</Button>
+
+                    <Button
+                        value="levelThree"
+                        onClick={handleSelectLevel}
+                    >Level Three</Button>
                 </div>
 
+                <div className="game-container">
+                    <Figure />
+                    <Guess word={randomedWord.toUpperCase()} start={start} />
+                </div>
             </div>
         </>
     )
