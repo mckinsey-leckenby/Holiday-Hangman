@@ -1,65 +1,67 @@
-import React, { useState } from 'react'
-import Letters from './Letters'
+import React, { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
+import Figure from './Figure'
+import GameOver from './GameOver'
+import YouWin from './YouWin'
 
 
-function Guess({ word, start }) {
+
+function Guess({ word, setStart, start }) {
+
     const [correctLetter, setCorrectLetter] = useState([])
     const [wrongLetter, setWrongLetter] = useState([])
-    const [winOrLose, setWinOrLose] = useState(false)
+    const [status, setStatus] = useState('')
+    const [letters, setLetters] = useState('abcdefghijklmnopqrstuvwxyz')
 
-    const spaceFinder = word.split("")
-    const wordSplitted = word.match(/\S/g)
-    console.log(wordSplitted)
-    console.log(spaceFinder)
-    // console.log(correctLetter)
-
-    const letterGuess = (e) => {
-        if (start) {
-            if (word.includes(e.target.value)) {
-                if (!correctLetter.includes(e.target.value)) {
-                    setCorrectLetter(currentLetter => [...currentLetter, e.target.value])
-                    console.log(correctLetter)
+    //=============================LETTERS================================
+    let eachLetter
+    let letterArr = Array.from(letters.toUpperCase())
+    eachLetter = letterArr.map((letter, index) => {
+        return <Button
+            className='letter'
+            key={index}
+            value={letter}
+            onClick={(e) => {
+                e.target.style.backgroundColor = 'black'
+                if (word.includes(letter)) {
+                    setCorrectLetter([...correctLetter, letter])
+                    if (!maskedWord.includes("_")) {
+                        setStatus("win")
+                    }
+                } else {
+                    setWrongLetter([...wrongLetter, letter])
+                    if (wrongLetter.length === 6) {
+                        setStart(prev => !prev)
+                        setStatus("lost")
+                    }
                 }
+            }}>{letter}</Button>
+    })
 
-            } else {
-                console.log("not a letter")
-            }
+
+
+    //=============================LETTERS================================
+
+    const maskedWord = word.split('').map(letter => {
+        if (correctLetter.includes(letter) || letter === " " || letter === "," || letter === "'" || letter === "." || letter === "?" || letter === "!") {
+            return letter
+        }
+        else {
+            return "_"
         }
     }
-
-    let onBlanks
-    if (start) {
-        onBlanks = word.split('').map(letter => {
-            if (letter === " ") {
-                return " "
-            }
-            else if (letter === ",") {
-                return ","
-            }
-            else if (letter === "'") {
-                return "'"
-            }
-            else if (letter === "?") {
-                return "?"
-            }
-            else if (letter === ".") {
-                return "."
-            }
-            else {
-                return "__"
-            }
-        })
-        onBlanks.join(" ")
-    }
-
+    )
+    let win = (!maskedWord.includes("_"))
+    console.log(win)
+    const lettersAndBlanks = <div><h1>{maskedWord}</h1>{eachLetter}</div>
+    const letsPlay = <Figure wrongLetter={wrongLetter.length} start={start} setStart={setStart} status={status} setStatus={setStatus} />
 
     return (
         <div className="game">
-            <h1>{onBlanks}</h1>
-            <h2>{word}</h2>
-            <section className="letters">
-                <Letters word={word} letterGuess={letterGuess} />
-            </section>
+            {status !== "lost" && [letsPlay, lettersAndBlanks]}
+            {status === "lost" && <GameOver />}
+            {win && <YouWin />}
+
         </div>
     )
 }

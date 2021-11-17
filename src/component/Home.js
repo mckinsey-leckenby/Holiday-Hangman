@@ -1,16 +1,8 @@
 import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
-import Figure from './Figure'
 import Guess from './Guess'
 
-
-
-//import AddGameForm from './AddGameForm'
-
-
-
 const url = "http://localhost:4000/movies"
-
 
 function Home() {
     const [levelOne, setLevelOne] = useState([])
@@ -19,9 +11,6 @@ function Home() {
     const [randomedWord, setRandomedWord] = useState('')
     const [start, setStart] = useState(false)
 
-
-
-    console.log(levelOne)
 
     useEffect(() => {
         fetch(url)
@@ -33,11 +22,12 @@ function Home() {
             })
     }, [])
 
+
+
     let audio1 = new Audio("/openchristmas.mp3")
     const start1 = () => {
         audio1.play()
     }
-
 
     const handleSelectLevel = (e) => {
         let random
@@ -60,11 +50,17 @@ function Home() {
     }
 
 
-
     return (
         <>
          
             <div className="main-container">
+                {!start &&
+                    <div className="selectLevel">
+                        <Button
+                            value="levelOne"
+                            onClick={handleSelectLevel}
+                        >Level One</Button>
+
                 <div className="selectLevel">
                     <Button
                         value="levelOne"
@@ -72,20 +68,21 @@ function Home() {
                         onMouseOver={start1}
                     >Level One</Button>
 
-                    <Button
-                        value="levelTwo"
-                        onClick={handleSelectLevel}
-                    >Level Two</Button>
 
-                    <Button
-                        value="levelThree"
-                        onClick={handleSelectLevel}
-                    >Level Three</Button>
-                </div>
+                        <Button
+                            value="levelTwo"
+                            onClick={handleSelectLevel}
+                        >Level Two</Button>
+
+                        <Button
+                            value="levelThree"
+                            onClick={handleSelectLevel}
+                        >Level Three</Button>
+                    </div>
+                }
 
                 <div className="game-container">
-                    <Figure />
-                    <Guess word={randomedWord.toUpperCase()} start={start} />
+                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
                 </div>
                 <div>
 

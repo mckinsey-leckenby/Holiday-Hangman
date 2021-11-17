@@ -121,6 +121,24 @@ h1 {
   text-align: center;
 }
 
+button.letter:hover{background-color:orange;}
+
+/* .letter:active {
+  cursor: pointer;
+  display:none;
+
+} */
+
+/* .letter{cursor: pointer; display:none;} */
+button.letter:focus {
+  /* display: hidden; */
+  /* background-color: black;
+  opacity: 0; */
+}
+button.letter:target {
+  opacity: 0;
+}
+
 .popup button {
   cursor: pointer;
   background-color: #fff;
@@ -200,6 +218,5 @@ height: auto;
   ;
 
 }
-
 
 

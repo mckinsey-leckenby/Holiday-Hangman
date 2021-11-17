@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 
 
 function Header({ }) {
@@ -13,13 +13,13 @@ function Header({ }) {
     )
 }
 
-// const Container = styled.div`
-//     display: flex;
-//     justify-content: space-between
-//     align-items: center;
-//     flex-wrap: wrap;
-//     background: "white";
-// `
+const Container = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: "white";
+`
 
 
 export default Header

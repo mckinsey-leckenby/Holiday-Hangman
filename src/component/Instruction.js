@@ -15,6 +15,8 @@ function Instruction() {
 
 
 const InsContainer = styled.div`
+
+        display: flex;
         font-size: 40px;
         display: flex;
         justify-content: space-between;
