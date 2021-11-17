@@ -19,8 +19,8 @@ function Guess({ word, setStart, start }) {
             className='letter'
             key={index}
             value={letter}
-            onclick="style.display = 'none'"
-            onClick={() => {
+            onClick={(e) => {
+                e.target.style.backgroundColor = 'black'
                 if (word.includes(letter)) {
                     setCorrectLetter([...correctLetter, letter])
                     if (!maskedWord.includes("_")) {
