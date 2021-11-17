@@ -6,15 +6,17 @@ import {IoIosContact} from "react-icons/io"
 import {BiDirections} from "react-icons/bi"
 
 
-function NavBar({addGame}) {
+
+function NavBar() {
    
     return (
         <>
+       
             <Link to='/'>
                 <AiFillHome size='100' color='red' />
             </Link>
             <Link to='/about'>
-              <SiAboutdotme addGame={addGame} size='100' color='red' />
+              <SiAboutdotme  size='100' color='red' />
             </Link>
             <Link to='/contact'>
                 <IoIosContact size='100' color='red' />
