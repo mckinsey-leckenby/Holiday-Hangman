@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 const Figure = () => {
+
     return (
         <div>
             <svg height="250" width="200" className="figure-container">
@@ -23,8 +25,8 @@ const Figure = () => {
                 {/* <!-- Legs --> */}
                 <line x1="140" y1="150" x2="120" y2="180" />
                 <line x1="140" y1="150" x2="160" y2="180" />
-
             </svg>
+
         </div>
     )
 }
