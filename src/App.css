@@ -157,7 +157,7 @@ h1 {
 
 .header {
 height: auto;
-  background: beige;
+  background: white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -166,4 +166,6 @@ height: auto;
   opacity: .7
   ;
 }
+
+
 

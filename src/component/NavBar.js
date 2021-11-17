@@ -1,24 +1,38 @@
 import React from 'react';
 import { Link } from "react-router-dom"
+import {AiFillHome} from "react-icons/ai"
+import {SiAboutdotme} from "react-icons/si"
+import {IoIosContact} from "react-icons/io"
+import {BiDirections} from "react-icons/bi"
+
 
 function NavBar() {
+   
     return (
         <>
             <Link to='/'>
-                Home
+                <AiFillHome size='100' color='red' />
             </Link>
             <Link to='/about'>
-                About
+              <SiAboutdotme size='100' color='red' />
             </Link>
             <Link to='/contact'>
-                Contact
+                <IoIosContact size='100' color='red' />
             </Link>
             <Link to='/instruction'>
-                Instruction
+                <BiDirections size='100' color='red' />
             </Link>
 
         </>
     )
 }
+
+
+// const Nav = styled.div`
+//     display: flex;
+//     justify-content: space-between
+//     align-items: center;
+//     flex-wrap: wrap;
+// `
 
 export default NavBar
