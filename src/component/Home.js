@@ -10,6 +10,8 @@ function Home() {
     const [levelOne, setLevelOne] = useState([])
     const [levelTwo, setLevelTwo] = useState([])
     const [levelThree, setLevelThree] = useState([])
+    const [randomedWord, setRandomedWord] = useState('')
+    const [start, setStart] = useState(false)
 
 
     useEffect(() => {
