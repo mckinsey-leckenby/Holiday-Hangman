@@ -2,7 +2,6 @@ html {
   background: url(./background.jpg) no-repeat fixed;
    background-size: cover;
   height: 100%;
-  overflow: hidden;
   top: 0;
   left: 0;
 }
@@ -156,6 +155,8 @@ h1 {
 
 
 .header {
+
+
 height: auto;
   background: white;
   display: flex;
@@ -163,8 +164,30 @@ height: auto;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
+
+  
+}
+.add-game-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgba(181, 250, 181, 0.5);
+}
+
+.add-game-form form {
+  display: flex;
+  justify-content: center;
+}
+
+.add-game-form input {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.add-game-form button {
+  width: 150px;
   opacity: .7
   ;
+
 }
 
 
