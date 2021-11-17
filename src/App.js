@@ -7,13 +7,17 @@ import { Route, Switch } from 'react-router-dom';
 // import { useEffect, useState } from 'react';
 import './App.css';
 
+
+// Import your audio file
+
+
 function App() {
+  
 
   return (
     <>
       <div>
-        <Header />
-
+        <Header/>
         <Switch>
 
           <Route exact path="/">
@@ -36,8 +40,9 @@ function App() {
           </Route>
         </Switch>
       </div>
+      
     </>
   );
-}
+          }
 
 export default App;
