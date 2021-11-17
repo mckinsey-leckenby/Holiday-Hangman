@@ -4,6 +4,7 @@ import Figure from './Figure'
 import Guess from './Guess'
 
 
+
 //import AddGameForm from './AddGameForm'
 
 
@@ -17,9 +18,10 @@ function Home() {
     const [levelThree, setLevelThree] = useState([])
     const [randomedWord, setRandomedWord] = useState('')
     const [start, setStart] = useState(false)
-    
 
-console.log(levelOne)
+
+
+    console.log(levelOne)
 
     useEffect(() => {
         fetch(url)
@@ -35,7 +37,6 @@ console.log(levelOne)
     const start1 = () => {
         audio1.play()
     }
-
 
 
     const handleSelectLevel = (e) => {
@@ -57,12 +58,12 @@ console.log(levelOne)
         }
         setStart(prev => !prev)
     }
- 
-    
+
+
 
     return (
         <>
-        
+         
             <div className="main-container">
                 <div className="selectLevel">
                     <Button
@@ -87,7 +88,7 @@ console.log(levelOne)
                     <Guess word={randomedWord.toUpperCase()} start={start} />
                 </div>
                 <div>
-               
+
                 </div>
             </div>
         </>
