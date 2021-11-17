@@ -4,7 +4,7 @@ import styled from 'styled-components'
 function Instruction() {
     return (
         <InsContainer>
-            <h1>This game is a version of the widely popular Hangman. As in all other Hangman games, your goal is to guess the letters that make up a word. If you make five wrong guesses, you lose the game!</h1>
+            This game is a version of the widely popular Hangman. As in all other Hangman games, your goal is to guess the letters that make up a word. If you make five wrong guesses, you lose the game!
         </InsContainer>
     )
 }
@@ -12,11 +12,16 @@ function Instruction() {
 
 
 const InsContainer = styled.div`
-    display: flex;
-        justify-content: space-between
-        align-items: center;
+        font-size: 40px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
         flex-wrap: wrap;
-        top: 100px
+        top: 100px;
+        color: white;
+        font-family: 'Mountains of Christmas', cursive;
+        padding-top: 4em;
+        
 
 `
 
