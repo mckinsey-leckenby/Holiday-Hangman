@@ -51,7 +51,6 @@ function Guess({ word, start }) {
         onBlanks.join(" ")
     }
 
-    const answerAndBlank = onBlanks.match()
 
     return (
         <div className="game">
