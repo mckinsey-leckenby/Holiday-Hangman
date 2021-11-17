@@ -5,6 +5,7 @@ import Guess from './Guess'
 //import AddGameForm from './AddGameForm'
 
 
+
 const url = "http://localhost:4000/movies"
 
 
@@ -14,7 +15,7 @@ function Home() {
     const [levelThree, setLevelThree] = useState([])
     const [randomedWord, setRandomedWord] = useState('')
     const [start, setStart] = useState(false)
-    //const [play, setPlay] = useState()
+
 
 
     useEffect(() => {
@@ -81,7 +82,6 @@ function Home() {
                     <Figure />
                     <Guess word={randomedWord.toUpperCase()} start={start} />
                 </div>
-               
             </div>
         </>
     )
