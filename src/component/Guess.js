@@ -42,7 +42,8 @@ function Guess({ word, setStart, start }) {
 
     //=============================LETTERS================================
 
-    const maskedWord = word.split('').map(letter => {
+    const maskedWord = word.split('').map((letter, index) => {
+        // key = { index }
         if (correctLetter.includes(letter) || letter === " " || letter === "," || letter === "'" || letter === "." || letter === "?" || letter === "!") {
             return letter
         }
@@ -53,7 +54,7 @@ function Guess({ word, setStart, start }) {
     )
     let win = (!maskedWord.includes("_"))
     console.log(win)
-    const lettersAndBlanks = <div><h1>{maskedWord}</h1>{eachLetter}</div>
+    const lettersAndBlanks = <div classname="letters-blanks"><h1>{maskedWord}</h1>{eachLetter}</div>
     const letsPlay = <Figure wrongLetter={wrongLetter.length} start={start} setStart={setStart} status={status} setStatus={setStatus} />
 
     return (
