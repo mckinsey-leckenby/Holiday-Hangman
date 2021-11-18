@@ -8,7 +8,7 @@ import {BiDirections} from "react-icons/bi"
 
 
 function NavBar() {
-   
+
     return (
         <>
        
