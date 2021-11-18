@@ -55,12 +55,6 @@ function Home() {
          
             <div className="main-container">
                 {!start &&
-                    <div className="selectLevel">
-                        <Button
-                            value="levelOne"
-                            onClick={handleSelectLevel}
-                        >Level One</Button>
-
                 <div className="selectLevel">
                     <Button
                         value="levelOne"
@@ -84,9 +78,7 @@ function Home() {
                 <div className="game-container">
                     {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
                 </div>
-                <div>
 
-                </div>
             </div>
         </>
     )
