@@ -1,6 +1,6 @@
 import React from 'react'
 import GameOver from './GameOver'
-
+import styled from 'styled-components'
 
 const Figure = ({ wrongLetter, setStart, start, status, setStatus }) => {
     const head = <circle cx="140" cy="70" r="20" />

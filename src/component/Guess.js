@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Figure from './Figure'
 import GameOver from './GameOver'
 import YouWin from './YouWin'
+import styled from 'styled-components'
 
 
 
@@ -53,7 +54,7 @@ function Guess({ word, setStart, start, start1 }) {
     }
     )
     let win = (!maskedWord.includes("_"))
-    const lettersAndBlanks = <div classname="letters-blanks"><h1>{maskedWord}</h1>{eachLetter}</div>
+    const lettersAndBlanks = <div classname="letters-blanks"><Container>{maskedWord}</Container>{eachLetter}</div>
     const letsPlay = <Figure wrongLetter={wrongLetter.length} start={start} setStart={setStart} status={status} setStatus={setStatus} />
     console.log(word)
     return (
@@ -66,4 +67,18 @@ function Guess({ word, setStart, start, start1 }) {
     )
 }
 
+const Container = styled.h1`
+        font-size: 40px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap;
+        top: 100px;
+        color: white;
+        font-family: 'Mountains of Christmas', cursive;
+        padding-top: 4em;
+        text-shadow: 2px 2px #ff0000;`
+
 export default Guess
+
+
