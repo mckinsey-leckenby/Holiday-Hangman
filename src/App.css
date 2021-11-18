@@ -70,7 +70,8 @@ h1 {
   stroke-linecap: round;
   display: block;
   margin-left: auto;
-  margin: auto
+  margin: auto;
+  filter:drop-shadow(2px 1.2px #ff0000)
 }
 
 .figure-part {
