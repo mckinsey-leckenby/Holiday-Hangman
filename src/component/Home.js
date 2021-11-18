@@ -22,13 +22,6 @@ function Home() {
             })
     }, [])
 
-
-
-    let audio1 = new Audio("/openchristmas.mp3")
-    const start1 = () => {
-        audio1.play()
-    }
-
     const handleSelectLevel = (e) => {
         let random
         if (e.target.value === "levelOne") {
@@ -52,43 +45,34 @@ function Home() {
 
     return (
         <>
-         
-            <div className="main-container">
-                {!start &&
-                    <div className="selectLevel">
-                        <Button
-                            value="levelOne"
-                            onClick={handleSelectLevel}
-                        >Level One</Button>
 
-                <div className="selectLevel">
-                    <Button
-                        value="levelOne"
-                        onClick={handleSelectLevel}
-                        onMouseOver={start1}
-                    >Level One</Button>
+            <div className="selectLevel">
+                <Button
+                    value="levelOne"
+                    onClick={handleSelectLevel}
+                >Level One</Button>
 
 
-                        <Button
-                            value="levelTwo"
-                            onClick={handleSelectLevel}
-                        >Level Two</Button>
+                <Button
+                    value="levelTwo"
+                    onClick={handleSelectLevel}
+                >Level Two</Button>
 
-                        <Button
-                            value="levelThree"
-                            onClick={handleSelectLevel}
-                        >Level Three</Button>
-                    </div>
-                }
-
-                <div className="game-container">
-                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
-                </div>
-                <div>
-
-                </div>
+                <Button
+                    value="levelThree"
+                    onClick={handleSelectLevel}
+                >Level Three</Button>
             </div>
-        </>
+
+
+            <div className="game-container">
+                {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
+            </div>
+            <div>
+
+            </div>
+            </>
+
     )
 }
 
