@@ -22,13 +22,6 @@ function Home() {
             })
     }, [])
 
-
-
-    let audio1 = new Audio("/openchristmas.mp3")
-    const start1 = () => {
-        audio1.play()
-    }
-
     const handleSelectLevel = (e) => {
         let random
         if (e.target.value === "levelOne") {
@@ -52,15 +45,16 @@ function Home() {
 
     return (
         <>
+
+
             <div className="main-container">
                 {!start &&
 
                 <div className="selectLevel">
-                    <Button
-                        value="levelOne"
-                        onClick={handleSelectLevel}
-                        onMouseOver={start1}
-                    >Level One</Button>
+                <Button
+                    value="levelOne"
+                    onClick={handleSelectLevel}
+                >Level One</Button>
 
 
 
@@ -79,9 +73,10 @@ function Home() {
                 <div className="game-container">
                     {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
                 </div>
-
             </div>
-        </>
+
+            </>
+
     )
 }
 

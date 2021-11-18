@@ -59,7 +59,12 @@
       "title": "A Christmas Carol",
       "quote": "Bah Humbug",
       "character": "Ebenezer Scrooge"
+    },
+    {
+      "title": "",
+      "quote": "",
+      "character": "",
+      "id": "ebbbaa70-a662-4c6a-98b2-3a05704db950"
     }
-    
   ]
 }
