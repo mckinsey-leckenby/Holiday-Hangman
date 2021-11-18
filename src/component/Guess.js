@@ -53,15 +53,14 @@ function Guess({ word, setStart, start, start1 }) {
     }
     )
     let win = (!maskedWord.includes("_"))
-    console.log(win)
     const lettersAndBlanks = <div classname="letters-blanks"><h1>{maskedWord}</h1>{eachLetter}</div>
     const letsPlay = <Figure wrongLetter={wrongLetter.length} start={start} setStart={setStart} status={status} setStatus={setStatus} />
-
+    console.log(word)
     return (
         <div className="game">
+            {status === "lost" && <GameOver status={status} />}
+            {win && <YouWin status={status} />}
             {status !== "lost" && [letsPlay, lettersAndBlanks]}
-            {status === "lost" && <GameOver />}
-            {win && <YouWin />}
 
         </div>
     )

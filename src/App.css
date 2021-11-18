@@ -28,6 +28,11 @@ Button {
   justify-content: center;
 }
 .game{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 10px;
   text-align: center;
   padding-bottom: 80px;
@@ -130,11 +135,15 @@ h1 {
 
 button.letter:hover{background-color:orange;}
 
-.game-over-img img {
+/* .game-over-img img {
   align-items: center;
   width: 500px;
+} */
+.results {
+  align-items: center;
+  width: 500px;
+  
 }
-
 .popup button {
   cursor: pointer;
   background-color: #fff;
