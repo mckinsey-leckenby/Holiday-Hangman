@@ -54,12 +54,14 @@ function Home() {
         <>
             <div className="main-container">
                 {!start &&
-                    <div className="selectLevel">
-                        <Button
-                            value="levelOne"
-                            onClick={handleSelectLevel}
-                            onMouseOver={start1}
-                        >Level One</Button>
+
+                <div className="selectLevel">
+                    <Button
+                        value="levelOne"
+                        onClick={handleSelectLevel}
+                        onMouseOver={start1}
+                    >Level One</Button>
+
 
 
                         <Button
