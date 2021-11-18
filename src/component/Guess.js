@@ -6,7 +6,7 @@ import YouWin from './YouWin'
 
 
 
-function Guess({ word, setStart, start }) {
+function Guess({ word, setStart, start, start1 }) {
 
     const [correctLetter, setCorrectLetter] = useState([])
     const [wrongLetter, setWrongLetter] = useState([])

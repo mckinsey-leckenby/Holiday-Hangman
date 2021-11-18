@@ -5,58 +5,63 @@ import styled from 'styled-components'
 
 function AddGameForm() {
 
-    const[movies, setMovies] = useState ([])
+    const [movies, setMovies] = useState([])
     // console.log(movies)
-    const[formData, setFormData]= useState ({
-    
-              title: "",
-              quote: "",
-              character: "",
-              id: ""
-            
+    const [formData, setFormData] = useState({
+
+        title: "",
+        quote: "",
+        character: "",
+        id: ""
+
     })
     const addGame = (newGame) => {
         //console.log(newTransaction)
-       setMovies([...movies, newGame]) 
-       console.log(movies)  
-      }
+        setMovies([...movies, newGame])
+        console.log(movies)
+    }
     useEffect(() => {
         fetch('http://localhost:4000/movies')
-        .then(resp => resp.json())
-        .then(data => setMovies(data))
+            .then(resp => resp.json())
+            .then(data => setMovies(data))
     }, [])
 
-const handleSubmit = (e) => {
-    e.preventDefault()
-    const newGame = {
-        title: formData.title,
-        quote: formData.quote,
-        character: formData.character,
-        id: uuidv4()
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const newGame = {
+            title: formData.title,
+            quote: formData.quote,
+            character: formData.character,
+            id: uuidv4()
+        }
+
+
+        fetch('http://localhost:4000/movies', {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(newGame)
+        })
+            .then(resp => resp.json())
+            .then(data => addGame(data))
+        setFormData({
+            title: "",
+            quote: "",
+            character: "",
+            id: ""
+        })
+
     }
 
-
-fetch('http://localhost:4000/movies', {
-    method: "POST",
-    headers: {"Content-type": "application/json"},
-    body: JSON.stringify(newGame)
-  })
-  .then(resp => resp.json())
-  .then(data => addGame(data))
-
-  }
-
-const handleOnChange = (e) => {
-console.log(formData)
-    setFormData({...formData, [e.target.name]: e.target.value})
-}
+    const handleOnChange = (e) => {
+        console.log(formData)
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
 
 let audio1 = new Audio("/openchristmas.mp3")
     const start1 = () => {
         audio1.play()
     }
     return (
-     
 
 <GameFormContainer className="add-game-form" >
 <h2>Enter New Game Here!</h2>

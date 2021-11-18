@@ -115,7 +115,6 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  /* display: flex; */
   display: none;
   align-items: center;
   justify-content: center;
@@ -131,20 +130,9 @@ h1 {
 
 button.letter:hover{background-color:orange;}
 
-/* .letter:active {
-  cursor: pointer;
-  display:none;
-
-} */
-
-/* .letter{cursor: pointer; display:none;} */
-button.letter:focus {
-  /* display: hidden; */
-  /* background-color: black;
-  opacity: 0; */
-}
-button.letter:target {
-  opacity: 0;
+.game-over-img img {
+  align-items: center;
+  width: 500px;
 }
 
 .popup button {
