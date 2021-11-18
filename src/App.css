@@ -5,6 +5,9 @@ html {
   top: 0;
   left: 0;
 }
+body {
+  padding: 0;
+}
 
 .letters {
   display: flex;
@@ -13,16 +16,21 @@ html {
   flex-wrap: wrap;
 }
 
-
 Button {
   border-radius: 50%;
   padding: 30px;
   background-color: red;
   color: beige;
 }
+.game h1{
+  padding-bottom: 10%;
+  display: flex;
+  justify-content: center;
+}
 .game{
+  padding: 10px;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 
 }
 div.selectLevel {

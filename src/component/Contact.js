@@ -9,7 +9,6 @@ function Contact() {
            The DJM Hangman application was built by the coding trio of Jeremiah Marcos, McKinsey Leckenby, and Daniel Sheehan.
            If you have any questions regarding the game or code itself, you can contact us at ...  
         </ContactContainer>
-       
     )
 }
 

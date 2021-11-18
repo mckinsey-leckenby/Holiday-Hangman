@@ -46,31 +46,35 @@ function Home() {
     return (
         <>
 
-            <div className="selectLevel">
+
+            <div className="main-container">
+                {!start &&
+
+                <div className="selectLevel">
                 <Button
                     value="levelOne"
                     onClick={handleSelectLevel}
                 >Level One</Button>
 
 
-                <Button
-                    value="levelTwo"
-                    onClick={handleSelectLevel}
-                >Level Two</Button>
 
-                <Button
-                    value="levelThree"
-                    onClick={handleSelectLevel}
-                >Level Three</Button>
+                        <Button
+                            value="levelTwo"
+                            onClick={handleSelectLevel}
+                        >Level Two</Button>
+
+                        <Button
+                            value="levelThree"
+                            onClick={handleSelectLevel}
+                        >Level Three</Button>
+                    </div>
+                }
+
+                <div className="game-container">
+                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
+                </div>
             </div>
 
-
-            <div className="game-container">
-                {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
-            </div>
-            <div>
-
-            </div>
             </>
 
     )
