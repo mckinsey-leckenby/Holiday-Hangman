@@ -72,7 +72,7 @@ function Home() {
                 }
 
                 <div className="game-container">
-                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} start1={start1} />}
+                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart}/>}
                 </div>
             </div>
 
