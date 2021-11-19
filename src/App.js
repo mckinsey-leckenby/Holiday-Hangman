@@ -12,19 +12,19 @@ import './App.css';
 
 
 function App() {
-  
+
 
   return (
     <>
       <div>
-        <Header/>
+        <Header />
         <Switch>
 
           <Route exact path="/">
             <Home />
           </Route>
 
-          <Route path="/about">
+          <Route path="/newMovies">
             <About />
           </Route>
 
@@ -40,9 +40,9 @@ function App() {
           </Route>
         </Switch>
       </div>
-      
+
     </>
   );
-          }
+}
 
 export default App;
