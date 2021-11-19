@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button'
 import React, { useState, useEffect } from 'react'
 import Guess from './Guess'
 
-const url = "http://localhost:4000/movies"
+const url = "https://hangman-djm-json-server.herokuapp.com/movies"
 
 function Home() {
     const [levelOne, setLevelOne] = useState([])
@@ -20,6 +20,7 @@ function Home() {
                 setLevelTwo(data.map(data => data.title))
                 setLevelThree(data.map(data => data.quote))
             })
+            .catch(error => console.log(error))
     }, [])
 
     const handleSelectLevel = (e) => {
@@ -51,11 +52,11 @@ function Home() {
                 {!start &&
 
 
-                <div className="selectLevel">
-                <Button
-                    value="levelOne"
-                    onClick={handleSelectLevel}
-                >Level One</Button>
+                    <div className="selectLevel">
+                        <Button
+                            value="levelOne"
+                            onClick={handleSelectLevel}
+                        >Level One</Button>
 
 
 
@@ -72,11 +73,11 @@ function Home() {
                 }
 
                 <div className="game-container">
-                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart}/>}
+                    {start && <Guess word={randomedWord.toUpperCase()} start={start} setStart={setStart} />}
                 </div>
             </div>
 
-            </>
+        </>
 
     )
 }
