@@ -1,5 +1,4 @@
 import React from 'react'
-import gameOver from "./images/gameOver.jpg"
 import styled from 'styled-components'
 
 function GameOver() {
