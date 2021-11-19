@@ -38,11 +38,9 @@ function Guess({ word, setStart, start, start1 }) {
                 }
             }}>{letter}</Button>
     })
-
     //=============================LETTERS================================
-
+    
     const maskedWord = word.split('').map((letter, index) => {
-        // key = { index }
         if (correctLetter.includes(letter) || letter === " " || letter === "," || letter === "'" || letter === "." || letter === "?" || letter === "!") {
             return letter
         }
@@ -60,11 +58,9 @@ function Guess({ word, setStart, start, start1 }) {
             {status === "lost" && <GameOver status={status} />}
             {win && <YouWin status={status} />}
             {status !== "lost" && [letsPlay, lettersAndBlanks]}
-
         </div>
     )
 }
-
 const Container = styled.h1`
         font-size: 40px;
         display: flex;
