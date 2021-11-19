@@ -21,7 +21,7 @@ function AddGameForm() {
         console.log(movies)
     }
     useEffect(() => {
-        fetch('http://localhost:4000/movies')
+        fetch('https://hangman-djm-json-server.herokuapp.com/movies')
             .then(resp => resp.json())
             .then(data => setMovies(data))
     }, [])
@@ -36,7 +36,7 @@ function AddGameForm() {
         }
 
 
-        fetch('http://localhost:4000/movies', {
+        fetch('https://hangman-djm-json-server.herokuapp.com/movies', {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(newGame)
@@ -57,21 +57,21 @@ function AddGameForm() {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-let audio1 = new Audio("/openchristmas.mp3")
+    let audio1 = new Audio("/openchristmas.mp3")
     const start1 = () => {
         audio1.play()
     }
     return (
 
-<GameFormContainer className="add-game-form" >
-<h2>Enter New Game Here!</h2>
-<form onSubmit = {handleSubmit}>
-  <input onChange={handleOnChange} type="text" name="title" placeholder="Movie Title" value={formData.title} />
-  <input onChange={handleOnChange} type="text" name="character" placeholder="Character" value={formData.character}/>
-  <input onChange={handleOnChange} type="text" name="quote"  placeholder="Quote" value={formData.quote}/>
-  <button onClick={start1}  type="submit">Add Movie</button>
-</form>
-</GameFormContainer>
+        <GameFormContainer className="add-game-form" >
+            <h2>Enter New Game Here!</h2>
+            <form onSubmit={handleSubmit}>
+                <input onChange={handleOnChange} type="text" name="title" placeholder="Movie Title" value={formData.title} />
+                <input onChange={handleOnChange} type="text" name="character" placeholder="Character" value={formData.character} />
+                <input onChange={handleOnChange} type="text" name="quote" placeholder="Quote" value={formData.quote} />
+                <button onClick={start1} type="submit">Add Movie</button>
+            </form>
+        </GameFormContainer>
     )
 }
 const GameFormContainer = styled.div`
