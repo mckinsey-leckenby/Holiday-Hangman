@@ -39,8 +39,6 @@ function Guess({ word, setStart, start, start1 }) {
             }}>{letter}</Button>
     })
 
-
-
     //=============================LETTERS================================
 
     const maskedWord = word.split('').map((letter, index) => {
